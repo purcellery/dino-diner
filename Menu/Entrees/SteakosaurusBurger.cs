@@ -3,16 +3,17 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
         private bool bun = true;
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Returns a list with all of the ingredients in the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -25,24 +26,43 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
+
+        /// <summary>
+        /// Default constructor to set price and calories for the entree
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;

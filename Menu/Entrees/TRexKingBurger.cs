@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
         private bool bun = true;
         private bool lettuce = true;
@@ -14,9 +14,10 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool mayo = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Returns a list with all of the ingredients in the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -33,40 +34,75 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
+
+        /// <summary>
+        /// Default constructor to set price and calories for the entree
+        /// </summary>
         public TRexKingBurger()
         {
            this.Price = 8.45;
            this.Calories = 728;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
         }
+
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;

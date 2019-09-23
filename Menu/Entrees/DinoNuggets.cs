@@ -2,12 +2,14 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         private int nuggetCount = 6;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+
+        /// <summary>
+        /// Returns a list with all of the ingredients in the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -19,11 +21,19 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
+
+        /// <summary>
+        /// Default constructor to set price and calories for the entree
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 354;
-        }    
+        }
+
+        /// <summary>
+        /// Adds a nugget to the entree
+        /// </summary>
         public void AddNugget()
         {
             nuggetCount++;

@@ -2,15 +2,15 @@
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ : Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Returns a list with all of the ingredients in the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -21,17 +21,26 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Default constructor to set price and calories for the entree
+        /// </summary>
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldJelly()
         {
             this.jelly = false;

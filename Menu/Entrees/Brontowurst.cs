@@ -3,15 +3,16 @@
 namespace DinoDiner.Menu.Entrees
 
 {
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
         private bool bun = true;
         private bool onions = true;
         private bool peppers = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Returns a list with all of the ingredients in the entree
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -22,22 +23,35 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
+
+        /// <summary>
+        /// Default constructor to set price and calories for the entree
+        /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldOnion()
         {
             this.onions = false;
         }
 
+        /// <summary>
+        /// Removes the selected ingredient if the customer desires to do so.
+        /// </summary>
         public void HoldPeppers()
         {
             this.peppers = false;
