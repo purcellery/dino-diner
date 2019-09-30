@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Sides
     {
         private Size macSize;
         /// <summary>
-        /// Basic Construct for Meteor Mac and Cheese Side. Sets the default size to small
+        /// Basic Constructor for Meteor Mac and Cheese Side. Sets the default size to small
         /// </summary>
         public MeteorMacAndCheese()
         {
