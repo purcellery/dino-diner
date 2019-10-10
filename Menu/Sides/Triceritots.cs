@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
@@ -56,6 +56,14 @@ namespace DinoDiner.Menu.Sides
                     totSize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (totSize == Size.Small) s += "Small ";
+            else if (totSize == Size.Medium) s += "Medium ";
+            else if (totSize == Size.Large) s += "Large ";
+            return  s + "Triceritots";
         }
     }
 }

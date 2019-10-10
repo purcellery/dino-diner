@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Fryceritops : Side
     {
@@ -56,6 +56,14 @@ namespace DinoDiner.Menu.Sides
                     frySize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (frySize == Size.Small) s += "Small ";
+            else if (frySize == Size.Medium) s += "Medium ";
+            else if (frySize == Size.Large) s += "Large ";
+            return s + "Fryceritops";
         }
     }
 }

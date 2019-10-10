@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
@@ -39,6 +39,10 @@ namespace DinoDiner.Menu.Entrees
             nuggetCount++;
             this.Price += .25;
             this.Calories += 59;
+        }
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
     }
 }

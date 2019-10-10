@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class PterodactylWings : Entree
     {
@@ -24,6 +24,10 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 7.21;
             this.Calories = 318;
+        }
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
         }
     }
 }

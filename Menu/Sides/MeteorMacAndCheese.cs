@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class MeteorMacAndCheese : Side
     {
@@ -56,6 +56,14 @@ namespace DinoDiner.Menu.Sides
                     macSize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (macSize == Size.Small) s += "Small ";
+            else if (macSize == Size.Medium) s += "Medium ";
+            else if (macSize == Size.Large) s += "Large ";
+            return s + "Meteor Mac and Cheese";
         }
     }
 }

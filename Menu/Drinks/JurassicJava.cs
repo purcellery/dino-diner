@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class JurassicJava : Drink 
     {
         private Size javaSize;
-
+        
         /// <summary>
         /// Basic Constructor for the Water Drink Class
         /// </summary>
@@ -77,6 +77,16 @@ namespace DinoDiner.Menu.Drinks
                     javaSize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (javaSize == Size.Small) s += "Small ";
+            else if (javaSize == Size.Medium) s += "Medium ";
+            else if (javaSize == Size.Large) s += "Large ";
+
+            if (this.Decaf) s += "Decaf ";
+            return s + "Jurassic Java";
         }
     }
 }

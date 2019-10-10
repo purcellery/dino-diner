@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public enum SodasaurusFlavor
     {
@@ -69,6 +69,22 @@ namespace DinoDiner.Menu.Drinks
                     sodaSize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (sodaSize == Size.Small) s += "Small ";
+            else if (sodaSize == Size.Medium) s += "Medium ";
+            else if (sodaSize == Size.Large) s += "Large ";
+
+            if (this.Flavor == SodasaurusFlavor.Cherry) s += "Cherry ";
+            else if (this.Flavor == SodasaurusFlavor.Chocolate) s += "Chocolate ";
+            else if (this.Flavor == SodasaurusFlavor.Cola) s += "Cola ";
+            else if (this.Flavor == SodasaurusFlavor.Lime) s += "Lime ";
+            else if (this.Flavor == SodasaurusFlavor.Orange) s += "Orange ";
+            else if (this.Flavor == SodasaurusFlavor.RootBeer) s += "RootBeer ";
+            else if (this.Flavor == SodasaurusFlavor.Vanilla) s += "Vanilla ";
+            return s + "Sodasaurus";
         }
     }
 }

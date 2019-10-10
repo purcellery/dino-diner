@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 
 {
     public class Brontowurst : Entree
@@ -56,6 +56,9 @@ namespace DinoDiner.Menu.Entrees
         {
             this.peppers = false;
         }
-
+        public override string ToString()
+        {
+            return "Brontowurst";
+        }
     }
 }

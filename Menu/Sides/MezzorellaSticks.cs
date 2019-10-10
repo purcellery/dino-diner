@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
     public class MezzorellaSticks : Side
@@ -57,6 +57,14 @@ namespace DinoDiner.Menu.Sides
                     stickSize = Size.Large;
                 }
             }
+        }
+        public override string ToString()
+        {
+            string s = "";
+            if (stickSize == Size.Small) s += "Small ";
+            else if (stickSize == Size.Medium) s += "Medium ";
+            else if (stickSize == Size.Large) s += "Large ";
+            return s + "Mezzorella Sticks";
         }
     }
 }

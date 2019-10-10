@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class Tyrannotea : Drink
     {
@@ -115,6 +115,17 @@ namespace DinoDiner.Menu.Drinks
         public void AddLemon()
         {
             this.Lemon = true;
+        }
+
+        public override string ToString()
+        {
+            string s = "";
+            if (teaSize == Size.Small) s += "Small ";
+            else if (teaSize == Size.Medium) s += "Medium ";
+            else if (teaSize == Size.Large) s += "Large ";
+
+            if (this.Sweet) s += "Sweet ";
+            return s + "Tyrannotea";
         }
     }
 }
