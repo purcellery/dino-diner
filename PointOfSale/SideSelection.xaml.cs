@@ -14,20 +14,20 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 /**
- * MainWindow.xaml.cs
+ * SideSelection.xaml.cs
  * Braden Purcell
  * 
- * This class Models the MainWindow page of the User Interface. It acts as the base that is referred to by the other windows.
+ * This class Models the SideSelection page of the User Interface.
  */
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SideSelection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SideSelection : Page
     {
-        public MainWindow()
+        public SideSelection()
         {
             InitializeComponent();
         }

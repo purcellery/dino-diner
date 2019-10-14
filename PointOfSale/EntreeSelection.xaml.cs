@@ -10,26 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 /**
- * MainWindow.xaml.cs
+ * EntreeSelection.xaml.cs
  * Braden Purcell
  * 
- * This class Models the MainWindow page of the User Interface. It acts as the base that is referred to by the other windows.
+ * This class Models the EntreeSelection page of the User Interface.
  */
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EntreeSelection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EntreeSelection : Page
     {
-        public MainWindow()
+        public EntreeSelection()
         {
             InitializeComponent();
         }
+
     }
 }
