@@ -50,6 +50,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyPropertyChanged("Bun");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -58,6 +60,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyPropertyChanged("Lettuce");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -66,6 +70,8 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyPropertyChanged("Tomato");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -74,6 +80,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyPropertyChanged("Onion");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -82,6 +90,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyPropertyChanged("Pickle");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -90,6 +100,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyPropertyChanged("Ketchup");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -98,6 +110,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyPropertyChanged("Mustard");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -106,10 +120,60 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.mayo = false;
+            NotifyPropertyChanged("Mayo");
+            NotifyPropertyChanged("Special");
         }
         public override string ToString()
         {
             return "T-Rex King Burger";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (!bun)
+                {
+                    s.Add("Hold Bun");
+                }
+                if (!lettuce)
+                {
+                    s.Add("Hold Lettuce");
+                }
+                if (!tomato)
+                {
+                    s.Add("Hold Tomato");
+                }
+                if (!onion)
+                {
+                    s.Add("Hold Onion");
+                }
+                if (!pickle)
+                {
+                    s.Add("Hold Pickle");
+                }
+                if (!mustard)
+                {
+                    s.Add("Hold Mustard");
+                }
+                if (!ketchup)
+                {
+                    s.Add("Hold Ketchup");
+                }
+                if (!mayo)
+                {
+                    s.Add("Hold Mayo");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

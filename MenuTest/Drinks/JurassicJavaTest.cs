@@ -98,6 +98,7 @@ namespace MenuTest.Drinks
             JurassicJava ft = new JurassicJava();
             ft.AddIce();
             Assert.True(ft.Ice);
+            Assert.Contains("Add Ice", ft.Special);
         }
         [Fact]
         public void CheckLeaveRoomForCream()
@@ -105,6 +106,7 @@ namespace MenuTest.Drinks
             JurassicJava ft = new JurassicJava();
             ft.LeaveRoomForCream();
             Assert.True(ft.RoomForCream);
+            Assert.Contains("Add Room For Cream", ft.Special);
         }
     }
 }

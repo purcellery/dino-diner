@@ -38,6 +38,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.99;
@@ -65,6 +66,22 @@ namespace DinoDiner.Menu
             else if (stickSize == Size.Medium) s += "Medium ";
             else if (stickSize == Size.Large) s += "Large ";
             return s + "Mezzorella Sticks";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                return s.ToArray();
+            }
         }
     }
 }

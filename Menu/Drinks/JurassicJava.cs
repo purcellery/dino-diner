@@ -26,6 +26,8 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
+            NotifyPropertyChanged("Room For Cream");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -34,6 +36,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyPropertyChanged("Ice");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -58,6 +62,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.59;
@@ -87,6 +92,31 @@ namespace DinoDiner.Menu
 
             if (this.Decaf) s += "Decaf ";
             return s + "Jurassic Java";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string [] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (Ice)
+                {
+                    s.Add("Add Ice");
+                }
+                if (RoomForCream)
+                {
+                    s.Add("Add Room For Cream");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

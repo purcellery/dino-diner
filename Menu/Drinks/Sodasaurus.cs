@@ -17,16 +17,26 @@ namespace DinoDiner.Menu
     public class Sodasaurus : Drink
     {
         private Size sodaSize;
+        private SodasaurusFlavor sodaFlavor;
 
         /// <summary>
         /// Basic Constructor for the Water Drink Class
         /// </summary>
         public Sodasaurus() : base()
         {
-            Flavor = SodasaurusFlavor.Cola;
+            sodaFlavor = SodasaurusFlavor.Cola;
         }
         
-        public SodasaurusFlavor Flavor { get; set; }
+        public SodasaurusFlavor Flavor { 
+            get {
+                return this.sodaFlavor;
+            } 
+            set
+            {
+                NotifyPropertyChanged("Flavor");
+                this.sodaFlavor = value;
+            }
+        }
         
         /// <summary>
         /// Returns a list of the ingredients
@@ -50,6 +60,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 1.50;
@@ -85,6 +96,26 @@ namespace DinoDiner.Menu
             else if (this.Flavor == SodasaurusFlavor.RootBeer) s += "RootBeer ";
             else if (this.Flavor == SodasaurusFlavor.Vanilla) s += "Vanilla ";
             return s + "Sodasaurus";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (!Ice) {
+                    s.Add("Hold Ice");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

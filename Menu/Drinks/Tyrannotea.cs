@@ -20,6 +20,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Sweet");
                 isSweet = value;
                 switch (this.Size)
                     {
@@ -89,6 +90,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.99;
@@ -115,6 +117,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyPropertyChanged("Lemon");
+            NotifyPropertyChanged("Special");
         }
 
         public override string ToString()
@@ -126,6 +130,31 @@ namespace DinoDiner.Menu
 
             if (this.Sweet) s += "Sweet ";
             return s + "Tyrannotea";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (!Ice)
+                {
+                    s.Add("Hold Ice");
+                }
+                if (Lemon)
+                {
+                    s.Add("Add Lemon");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

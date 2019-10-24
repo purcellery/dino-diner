@@ -1,15 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+        private double entreePrice = 0;
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        public double Price {
+            get
+            {
+                return this.entreePrice;
+            }
+            set
+            {
+                NotifyPropertyChanged("Price");
+                this.entreePrice = value;
+            }
+        
+        }
 
         /// <summary>
         /// Gets and sets the calories
@@ -21,6 +34,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public abstract List<string> Ingredients { get; }
 
-        public abstract string ToString();
+        public abstract string Description { get; }
+
+        public abstract string[] Special { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
     }
 }

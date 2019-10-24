@@ -42,6 +42,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyPropertyChanged("Bun");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -50,6 +52,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyPropertyChanged("Pickle");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -58,6 +62,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyPropertyChanged("Ketchup");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -66,10 +72,44 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyPropertyChanged("Mustard");
+            NotifyPropertyChanged("Special");
         }
         public override string ToString()
         {
             return "Steakosaurus Burger";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (!bun)
+                {
+                    s.Add("Hold Bun");
+                }
+                if (!pickle)
+                {
+                    s.Add("Hold Pickle");
+                }
+                if (!mustard)
+                {
+                    s.Add("Hold Mustard");
+                }
+                if (!ketchup)
+                {
+                    s.Add("Hold Ketchup");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

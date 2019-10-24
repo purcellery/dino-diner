@@ -37,6 +37,7 @@ namespace DinoDiner.Menu
             }
             set
             {
+                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.99;
@@ -64,6 +65,21 @@ namespace DinoDiner.Menu
             else if (totSize == Size.Medium) s += "Medium ";
             else if (totSize == Size.Large) s += "Large ";
             return  s + "Triceritots";
+        }
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                return s.ToArray();
+            }
         }
     }
 }

@@ -39,6 +39,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyPropertyChanged("Bun");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -47,6 +49,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onions = false;
+            NotifyPropertyChanged("Onion");
+            NotifyPropertyChanged("Special");
         }
 
         /// <summary>
@@ -55,10 +59,40 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyPropertyChanged("Peppers");
+            NotifyPropertyChanged("Special");
         }
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> s = new List<string>();
+                if (!bun)
+                {
+                    s.Add("Hold Bun");
+                }
+                if (!peppers)
+                {
+                    s.Add("Hold Peppers");
+                }
+                if (!onions)
+                {
+                    s.Add("Hold Onions");
+                }
+                return s.ToArray();
+            }
         }
     }
 }

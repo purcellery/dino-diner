@@ -101,6 +101,7 @@ namespace MenuTest.Drinks
             Water ft = new Water();
             ft.HoldIce();
             Assert.False(ft.Ice);
+            Assert.Contains("Hold Ice", ft.Special);
         }
 
         [Fact]
@@ -110,7 +111,9 @@ namespace MenuTest.Drinks
             ft.AddLemon();
             Assert.True(ft.Lemon);
             Assert.Contains("Lemon", ft.Ingredients);
+            Assert.Contains("Add Lemon", ft.Special);
         }
+
     }
 }
 
