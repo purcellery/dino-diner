@@ -29,6 +29,25 @@ namespace DinoDiner.Menu
             NotifyPropertyChanged("Room For Cream");
             NotifyPropertyChanged("Special");
         }
+        public void NoRoomForCream()
+        {
+            this.RoomForCream = false;
+            NotifyPropertyChanged("Room For Cream");
+            NotifyPropertyChanged("Special");
+        }
+
+        public void MakeDecaf()
+        {
+            this.Decaf = true;
+            NotifyPropertyChanged("Decaf");
+            NotifyPropertyChanged("Description");
+        }
+        public void MakeCaf()
+        {
+            this.Decaf = false;
+            NotifyPropertyChanged("Decaf");
+            NotifyPropertyChanged("Description");
+        }
 
         /// <summary>
         /// Adds Ice to the JurassicJava as per the desire of the customer.
@@ -62,24 +81,29 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.59;
                     this.Calories = 2;
                     javaSize = Size.Small;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Medium)
                 {
                     this.Price = 0.99;
                     this.Calories = 4;
                     javaSize = Size.Medium;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Large)
                 {
                     this.Price = 1.49;
                     this.Calories = 8;
                     javaSize = Size.Large;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
             }
         }

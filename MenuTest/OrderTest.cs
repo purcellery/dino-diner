@@ -15,11 +15,10 @@ namespace MenuTest
             VelociWrap v = new VelociWrap();
             Triceritots t = new Triceritots();
             Water w = new Water();
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
-            order.Add(v);
-            order.Add(t);
-            order.Add(w);
-            Order ft = new Order(order, .1);
+            Order ft = new Order();
+            ft.Items.Add(v);
+            ft.Items.Add(t);
+            ft.Items.Add(w);
             Assert.Equal(7.95, ft.SubtotalCost);
             Assert.Equal(.1 , ft.SalesTaxRate);
             Assert.Equal(ft.SubtotalCost * ft.SalesTaxRate, ft.SalesTaxCost);
@@ -30,10 +29,9 @@ namespace MenuTest
         public void CheckSubtotalCostIsNotNegative()
         {
             Water w = new Water();
-            ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
             w.Price = -1.00;
-            order.Add(w);
-            Order ft = new Order(order, .1);
+            Order ft = new Order();
+            ft.Items.Add(w);
             Assert.Equal(0, ft.SubtotalCost);
         }
     }

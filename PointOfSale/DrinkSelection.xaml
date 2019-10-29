@@ -7,23 +7,24 @@
         mc:Ignorable="d"
         Title="DrinkSelection" Height="450" Width="800">
     <Grid>
-        <Button Content="Large" HorizontalAlignment="Left" Margin="273,289,0,0" VerticalAlignment="Top" Width="199" Height="100"/>
-        <Button Content="Small" HorizontalAlignment="Left" Margin="273,81,0,0" VerticalAlignment="Top" Width="199" Height="100"/>
-        <Button Content="Medium" HorizontalAlignment="Left" Margin="273,186,0,0" VerticalAlignment="Top" Width="199" Height="98"/>
+        <Button Content="Large" Name="LargeButton" HorizontalAlignment="Left" Margin="273,289,0,0" VerticalAlignment="Top" Width="199" Height="100" Click="ToggleSize"/>
+        <Button Content="Small" Name="SmallButton" HorizontalAlignment="Left" Margin="273,81,0,0" VerticalAlignment="Top" Width="199" Height="100" Click="ToggleSize"/>
+        <Button Content="Medium" Name="MediumButton" HorizontalAlignment="Left" Margin="273,186,0,0" VerticalAlignment="Top" Width="199" Height="98" Click="ToggleSize"/>
         <Button Content="Sodasaurus" HorizontalAlignment="Left" Margin="55,81,0,0" VerticalAlignment="Top" Width="154" Height="74" Click="SodasaurusClick"/>
         <Label Content="Add To Order" HorizontalAlignment="Left" Margin="356,3,0,0" VerticalAlignment="Top" Width="82"/>
         <Button Content="Tyrannotea" HorizontalAlignment="Left" Margin="55,157,0,0" VerticalAlignment="Top" Width="154" Height="74" Click="TyrannoteaClick"/>
         <Button Content="Jurassic Java" HorizontalAlignment="Left" Margin="55,236,0,0" VerticalAlignment="Top" Width="154" Height="74" Click="JurassicJavaClick"/>
         <Button Content="Water" HorizontalAlignment="Left" Margin="55,315,0,0" VerticalAlignment="Top" Width="154" Height="74" Click="WaterClick"/>
         <Button Name="flavorButton" Content="Add Flavor" HorizontalAlignment="Left" Margin="532,89,0,0" VerticalAlignment="Top" Width="199" Height="50" Click="FlavorClick"/>
-        <Button Name="addLemonButton" Content="Add Lemon" HorizontalAlignment="Left" Margin="532,294,0,0" VerticalAlignment="Top" Width="199" Height="45"/>
-        <Button Name="IceButton"  Content="Ice" HorizontalAlignment="Left" Margin="532,344,0,0" VerticalAlignment="Top" Width="199" Height="45"/>
+        <Button Name="addLemonButton" Content="Lemon" HorizontalAlignment="Left" Margin="532,294,0,0" VerticalAlignment="Top" Width="199" Height="45" Click="ToggleLemon"/>
+        <Button Name="IceButton"  Content="Ice" HorizontalAlignment="Left" Margin="532,344,0,0" VerticalAlignment="Top" Width="199" Height="45" Click="ToggleIce"/>
         <Label Content="Drink" HorizontalAlignment="Left" Margin="114,55,0,0" VerticalAlignment="Top" Width="38"/>
         <Label Content="Size" HorizontalAlignment="Left" Margin="356,55,0,0" VerticalAlignment="Top" Width="32"/>
         <Label Content="Special" HorizontalAlignment="Left" Margin="614,63,0,0" VerticalAlignment="Top" Width="46" RenderTransformOrigin="13.328,0.282"/>
-        <Button x:Name="creamButton" Content="Add Cream" HorizontalAlignment="Left" Margin="532,144,0,0" VerticalAlignment="Top" Width="199" Height="45"/>
-        <Button x:Name="sweetButton" Content="Add Sweetner" HorizontalAlignment="Left" Margin="532,194,0,0" VerticalAlignment="Top" Width="199" Height="45"/>
-        <Button x:Name="decafButton" Content="Make Decaf" HorizontalAlignment="Left" Margin="532,244,0,0" VerticalAlignment="Top" Width="199" Height="45"/>
+        <Button x:Name="creamButton" Content="Room For Cream" HorizontalAlignment="Left" Margin="532,144,0,0" VerticalAlignment="Top" Width="199" Height="45" Click="ToggleCream"/>
+        <Button x:Name="sweetButton" Content="Sweetener" HorizontalAlignment="Left" Margin="532,194,0,0" VerticalAlignment="Top" Width="199" Height="45" Click="ToggleSweet"/>
+        <Button x:Name="decafButton" Content="Decaf" HorizontalAlignment="Left" Margin="532,244,0,0" VerticalAlignment="Top" Width="199" Height="45" Click="ToggleDecaf"/>
+        <Button Content="Done" Name="DoneButton" HorizontalAlignment="Left" Margin="656,10,0,0" VerticalAlignment="Top" Width="134" Height="49" Click="DoneClick"/>
 
     </Grid>
 </Page>

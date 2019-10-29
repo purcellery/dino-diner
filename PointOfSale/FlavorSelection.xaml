@@ -11,13 +11,13 @@
             <ColumnDefinition Width="579*"/>
             <ColumnDefinition Width="214*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Vanilla" HorizontalAlignment="Left" Margin="273,301,0,-1" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Chocolate" HorizontalAlignment="Left" Margin="273,29,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Cola" HorizontalAlignment="Left" Margin="534,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2"/>
-        <Button Content="Lime" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Orange" HorizontalAlignment="Left" Margin="273,167,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Root Beer" HorizontalAlignment="Left" Margin="534,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2"/>
-        <Button Content="Cherry" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
+        <Button Content="Vanilla" HorizontalAlignment="Left" Margin="273,301,0,-1" VerticalAlignment="Top" Width="240" Height="120" Click="VanillaClick"/>
+        <Button Content="Chocolate" HorizontalAlignment="Left" Margin="273,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="ChocolateClick"/>
+        <Button Content="Cola" HorizontalAlignment="Left" Margin="534,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2" Click="ColaClick"/>
+        <Button Content="Lime" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="LimeClick"/>
+        <Button Content="Orange" HorizontalAlignment="Left" Margin="273,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="OrangeClick"/>
+        <Button Content="Root Beer" HorizontalAlignment="Left" Margin="534,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2" Click="RootBeerClick"/>
+        <Button Content="Cherry" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="CherryClick"/>
         <Label Content="Add To Order: Flavor
                " HorizontalAlignment="Left" Margin="337,3,0,0" VerticalAlignment="Top" Width="118"/>
 

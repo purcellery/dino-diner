@@ -31,8 +31,8 @@ namespace DinoDiner.Menu
             }
             set 
             {
-                NotifyPropertyChanged("Entree");
                 this.e = value;
+                NotifyPropertyChanged("Entree");
             }
         }
 
@@ -46,8 +46,8 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Side");
                 this.cs = value;
+                NotifyPropertyChanged("Side");
             }
         }
 
@@ -61,9 +61,9 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Drink");
                 this.d = value;
-            } 
+                NotifyPropertyChanged("Drink");
+            }
         }
 
         /// <summary>
@@ -96,10 +96,10 @@ namespace DinoDiner.Menu
             get { return size; }
             set
             {
-                NotifyPropertyChanged("Size");
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
+                NotifyPropertyChanged("Size");
             }
         }
 

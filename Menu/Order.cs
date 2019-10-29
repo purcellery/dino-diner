@@ -3,12 +3,38 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace DinoDiner.Menu
 {
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        private ObservableCollection<IOrderItem> items;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public ObservableCollection<IOrderItem> Items
+        {
+            get => items;
+            set
+            {
+                if (items != null) items.CollectionChanged -= ItemChangeEvent;
+                items = value;
+                if (items != null) items.CollectionChanged += ItemChangeEvent;
+            }
+        }
+
+        private void ItemChangeEvent(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            NotifyPropertyChanged("SubtotalCost");
+            NotifyPropertyChanged("SalesTaxCost");
+            NotifyPropertyChanged("TotalCost");
+        }
 
         public double SubtotalCost
         {
@@ -45,10 +71,10 @@ namespace DinoDiner.Menu
             }
         }
 
-        public Order(ObservableCollection<IOrderItem> items, double salesTax)
+        public Order()
         {
-            this.Items = items;
-            this.SalesTaxRate = salesTax;
+            this.Items = new ObservableCollection<IOrderItem>();
+            this.SalesTaxRate = .1;
         }
     }
 }

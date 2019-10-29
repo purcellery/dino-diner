@@ -18,10 +18,10 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Price");
                 this.entreePrice = value;
+                NotifyPropertyChanged("Price");
             }
-        
+
         }
 
         /// <summary>

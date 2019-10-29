@@ -33,8 +33,9 @@ namespace DinoDiner.Menu
             } 
             set
             {
-                NotifyPropertyChanged("Flavor");
                 this.sodaFlavor = value;
+                NotifyPropertyChanged("Flavor");
+                NotifyPropertyChanged("Description");
             }
         }
         
@@ -60,24 +61,29 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 1.50;
                     this.Calories = 112;
                     sodaSize = Size.Small;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Medium)
                 {
                     this.Price = 2.00;
                     this.Calories = 156;
                     sodaSize = Size.Medium;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Large)
                 {
                     this.Price = 2.50;
                     this.Calories = 208;
                     sodaSize = Size.Large;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
             }
         }

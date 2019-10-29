@@ -16,8 +16,8 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Price");
                 drinkPrice = value;
+                NotifyPropertyChanged("Price");
             }
         }
 
@@ -56,6 +56,13 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.Ice = false;
+            NotifyPropertyChanged("Ice");
+            NotifyPropertyChanged("Special");
+        }
+
+        public void AddIce()
+        {
+            this.Ice = true;
             NotifyPropertyChanged("Ice");
             NotifyPropertyChanged("Special");
         }

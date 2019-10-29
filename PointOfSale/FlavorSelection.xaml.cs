@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,5 +32,137 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public void ColaClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Cola;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+
+        public void VanillaClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Vanilla;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+
+        public void RootBeerClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.RootBeer;
+                    DrinkSelection d = new DrinkSelection();
+                    
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+        
+        public void CherryClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Cherry;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+
+        public void LimeClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Lime;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+
+        public void ChocolateClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Chocolate;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
+
+        public void OrangeClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                {
+                    soda.Flavor = SodasaurusFlavor.Orange;
+                    DrinkSelection d = new DrinkSelection();
+
+                    d.addLemonButton.Visibility = Visibility.Collapsed;
+                    d.creamButton.Visibility = Visibility.Collapsed;
+                    d.decafButton.Visibility = Visibility.Collapsed;
+                    d.sweetButton.Visibility = Visibility.Collapsed;
+                    d.flavorButton.Visibility = Visibility.Visible;
+                    NavigationService.Navigate(d);
+                }
+            }
+        }
     }
 }

@@ -17,8 +17,8 @@ namespace DinoDiner.Menu
                 return sidePrice;
             }
             set {
-                NotifyPropertyChanged("Price");
                 this.sidePrice = value;
+                NotifyPropertyChanged("Price");
             }
         }
 

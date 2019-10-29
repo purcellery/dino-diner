@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
+        xmlns:Menu="clr-namespace:DinoDiner.Menu;assembly=Menu"
         Title="MainWindow" Height="500" Width="1000">
+    <Window.DataContext>
+        <Menu:Order />
+    </Window.DataContext>
     <DockPanel>
-        <TextBlock DockPanel.Dock="Right" Width="200" TextAlignment="Center" Background="LightSteelBlue">// TODO: Order</TextBlock>
-        <Frame Source="MenuCategorySelection.xaml"></Frame>
+        <local:OrderControl x:Name="SuperMegaControllerNeo"  DockPanel.Dock="Right" Width="200" />
+        <Frame Name="frame" Source="MenuCategorySelection.xaml" LoadCompleted="Load_Completed" DataContextChanged="DataContextChanged"></Frame>
     </DockPanel>
 </Window>

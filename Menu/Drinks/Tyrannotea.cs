@@ -20,8 +20,9 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Sweet");
                 isSweet = value;
+                NotifyPropertyChanged("Sweet");
+                NotifyPropertyChanged("Description");
                 switch (this.Size)
                     {
                     case Size.Small:
@@ -90,24 +91,29 @@ namespace DinoDiner.Menu
             }
             set
             {
-                NotifyPropertyChanged("Size");
                 if (value == Size.Small)
                 {
                     this.Price = 0.99;
                     this.Calories = 8;
                     teaSize = Size.Small;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Medium)
                 {
                     this.Price = 1.49;
                     this.Calories = 16;
                     teaSize = Size.Medium;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
                 else if (value == Size.Large)
                 {
                     this.Price = 1.99;
                     this.Calories = 32;
                     teaSize = Size.Large;
+                    NotifyPropertyChanged("Size");
+                    NotifyPropertyChanged("Description");
                 }
             }
         }
@@ -117,6 +123,13 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyPropertyChanged("Lemon");
+            NotifyPropertyChanged("Special");
+        }
+
+        public void NoLemon()
+        {
+            this.Lemon = false;
             NotifyPropertyChanged("Lemon");
             NotifyPropertyChanged("Special");
         }

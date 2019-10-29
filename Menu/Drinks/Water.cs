@@ -27,6 +27,12 @@ namespace DinoDiner.Menu
             NotifyPropertyChanged("Special");
         }
 
+        public void NoLemon()
+        {
+            this.Lemon = false;
+            NotifyPropertyChanged("Lemon");
+            NotifyPropertyChanged("Special");
+        }
         /// <summary>
         /// This method keeps the price and calories stagnant despite the size of the water.
         /// </summary>
@@ -42,6 +48,7 @@ namespace DinoDiner.Menu
                 this.Calories = 0;
                 waterSize = value;
                 NotifyPropertyChanged("Size");
+                NotifyPropertyChanged("Description");
             }
         }
         

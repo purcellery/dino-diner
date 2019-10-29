@@ -11,13 +11,13 @@
             <ColumnDefinition Width="579*"/>
             <ColumnDefinition Width="214*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Veloci-Wrap" HorizontalAlignment="Left" Margin="273,301,0,-1" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Dino-Nuggets" HorizontalAlignment="Left" Margin="273,29,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Prehistoric PB&amp;J" HorizontalAlignment="Left" Margin="534,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2"/>
-        <Button Content="Pterodactyl Wings" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Steakosaurus Burger" HorizontalAlignment="Left" Margin="273,167,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="T-Rex King Burger" HorizontalAlignment="Left" Margin="534,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2"/>
-        <Button Content="Brontowurst" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
+        <Button Content="Veloci-Wrap" Name="VelociwrapButton" HorizontalAlignment="Left" Margin="273,301,0,-1" VerticalAlignment="Top" Width="240" Height="120" Click="EntreeClick"/>
+        <Button Content="Dino-Nuggets" Name="DinoNuggetsButton" HorizontalAlignment="Left" Margin="273,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="EntreeClick"/>
+        <Button Content="Prehistoric PB&amp;J" Name="PBJButton" HorizontalAlignment="Left" Margin="534,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2" Click="EntreeClick"/>
+        <Button Content="Pterodactyl Wings" Name="WingsButton" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="EntreeClick"/>
+        <Button Content="Steakosaurus Burger" Name="SteakosaurusButton" HorizontalAlignment="Left" Margin="273,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="EntreeClick"/>
+        <Button Content="T-Rex King Burger" Name="TRexButton" HorizontalAlignment="Left" Margin="534,167,0,0" VerticalAlignment="Top" Width="240" Height="120" Grid.ColumnSpan="2" Click="EntreeClick"/>
+        <Button Content="Brontowurst" Name="BrontowurstButton" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="EntreeClick"/>
         <Label Content="Add To Order" HorizontalAlignment="Left" Margin="356,3,0,0" VerticalAlignment="Top" Width="82"/>
 
     </Grid>
