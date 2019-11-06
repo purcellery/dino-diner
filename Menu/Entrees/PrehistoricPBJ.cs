@@ -7,6 +7,22 @@ namespace DinoDiner.Menu
         private bool peanutButter = true;
         private bool jelly = true;
 
+        public override int Mods { get; } = 2;
+
+        public override void SwitchBoolByID(int id)
+        {
+            switch (id)
+            {
+                case 1:
+                    peanutButter = !peanutButter;
+                    break;
+                case 2:
+                    jelly = !jelly;
+                    break;
+            }
+            NotifyPropertyChanged("Special");
+        }
+
         /// <summary>
         /// Returns a list with all of the ingredients in the entree
         /// </summary>

@@ -40,36 +40,59 @@ namespace PointOfSale
                 {
                     order.Items.Add(new Brontowurst());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new Brontowurst());
+                    NavigationService.Navigate(e);
+                    
                 }
                 else if (sender == VelociwrapButton)
                 {
                     order.Items.Add(new VelociWrap());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new VelociWrap());
+                    NavigationService.Navigate(e);
                 }
                 else if (sender == SteakosaurusButton)
                 {
                     order.Items.Add(new SteakosaurusBurger());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new SteakosaurusBurger());
+                    NavigationService.Navigate(e);
                 }
                 else if (sender == TRexButton)
                 {
                     order.Items.Add(new TRexKingBurger());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new TRexKingBurger());
+                    NavigationService.Navigate(e);
                 }
                 else if (sender == DinoNuggetsButton)
                 {
                     order.Items.Add(new DinoNuggets());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new DinoNuggets());
+                    NavigationService.Navigate(e);
                 }
                 else if (sender == WingsButton)
                 {
                     order.Items.Add(new PterodactylWings());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new PterodactylWings());
+                    NavigationService.Navigate(e);
+
                 }
                 else
                 {
                     order.Items.Add(new PrehistoricPBJ());
                     CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(new PrehistoricPBJ());
+                    NavigationService.Navigate(e);
                 }
             }
         }

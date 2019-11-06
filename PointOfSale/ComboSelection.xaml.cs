@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,43 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void ComboClick(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (DataContext is Order order)
+            {
+                Entree e = new Brontowurst();
+                CustomizeCombo c = new CustomizeCombo();
+                if (sender == BratButton)
+                {
+                    e = new Brontowurst();
+                }
+                else if(sender == NuggetButton)
+                {
+                    e = new DinoNuggets();
+                }
+                else if (sender == SteakButton)
+                {
+                    e = new SteakosaurusBurger();
+                }
+                else if (sender == TRexButton)
+                {
+                    e = new TRexKingBurger();
+                }
+                else if (sender == WrapButton)
+                {
+                    e = new VelociWrap();
+                }
+                else if (sender == WingButton)
+                {
+                    e = new PterodactylWings();
+                }
+                else if (sender == PBJButton)
+                {
+                    e = new PrehistoricPBJ();
+                }
+                order.Add(new CretaceousCombo(e));
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                //c.SetCombo(CretaceousCombo)order.Items.Last<IOrderItem>());
+                NavigationService.Navigate(c);
+            }
         }
     }
 }

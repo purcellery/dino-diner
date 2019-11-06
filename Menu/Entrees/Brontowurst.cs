@@ -8,7 +8,25 @@ namespace DinoDiner.Menu
         private bool bun = true;
         private bool onions = true;
         private bool peppers = true;
+        public override int Mods { get; } = 3;
 
+        public override void SwitchBoolByID(int id)
+        {
+            switch (id)
+            {
+                case 1:
+                    bun = !bun;
+                    break;
+                case 2:
+                    onions = !onions;
+                    break;
+                case 3:
+                    peppers = !peppers;
+                    break;
+                    
+            }
+            NotifyPropertyChanged("Special");
+        }
         /// <summary>
         /// Returns a list with all of the ingredients in the entree
         /// </summary>

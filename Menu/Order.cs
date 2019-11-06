@@ -29,7 +29,30 @@ namespace DinoDiner.Menu
             }
         }
 
+        public void Add(IOrderItem item)
+        {
+            item.PropertyChanged += UpdatePropertyChanged;
+            items.Add(item);
+            NotifyPropertyChanged("Items");
+            NotifyPropertyChanged("SubtotalCost");
+
+        }
+
+        public void Remove(IOrderItem item)
+        {
+            items.Remove(item);
+            NotifyPropertyChanged("Items");
+            NotifyPropertyChanged("SubtotalCost");
+        }
+
         private void ItemChangeEvent(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            NotifyPropertyChanged("SubtotalCost");
+            NotifyPropertyChanged("SalesTaxCost");
+            NotifyPropertyChanged("TotalCost");
+        }
+
+        private void UpdatePropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             NotifyPropertyChanged("SubtotalCost");
             NotifyPropertyChanged("SalesTaxCost");

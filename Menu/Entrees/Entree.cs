@@ -7,6 +7,8 @@ namespace DinoDiner.Menu
 {
     public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+        public abstract void SwitchBoolByID(int id);
+
         private double entreePrice = 0;
         /// <summary>
         /// Gets and sets the price
@@ -24,6 +26,7 @@ namespace DinoDiner.Menu
 
         }
 
+        public abstract int Mods { get; }
         /// <summary>
         /// Gets and sets the calories
         /// </summary>

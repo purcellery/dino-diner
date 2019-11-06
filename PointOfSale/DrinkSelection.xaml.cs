@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 using Size = DinoDiner.Menu.Size;
 
 /**
@@ -49,8 +39,26 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(new Sodasaurus());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                
+
+                if (fromCombo)
+                {
+                    CustomizeCombo c = new CustomizeCombo();
+                    c.CheckDrink();
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        Sodasaurus t = new Sodasaurus();
+                        t.Size = combo.Size;
+                        combo.Drink = t;
+                    }
+
+                }
+                else
+                {
+                    order.Items.Add(new Sodasaurus());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
             addLemonButton.Visibility = Visibility.Collapsed;
@@ -59,12 +67,7 @@ namespace PointOfSale
             sweetButton.Visibility = Visibility.Collapsed;
             flavorButton.Visibility = Visibility.Visible;
 
-            if (fromCombo)
-            {
-                CustomizeCombo c = new CustomizeCombo();
-                c.CheckDrink();
-                NavigationService.Navigate(c);
-            }
+            
         }
 
         /// <summary>
@@ -76,8 +79,26 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(new Tyrannotea());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                
+
+                if (fromCombo)
+                {
+                    CustomizeCombo c = new CustomizeCombo();
+                    c.CheckDrink();
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        Tyrannotea t = new Tyrannotea();
+                        t.Size = combo.Size;
+                        combo.Drink = t;
+                    }
+
+                }
+                else
+                {
+                    order.Items.Add(new Tyrannotea());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
             addLemonButton.Visibility = Visibility.Visible;
@@ -86,7 +107,7 @@ namespace PointOfSale
             sweetButton.Visibility = Visibility.Visible;
             flavorButton.Visibility = Visibility.Collapsed;
 
-            if (fromCombo) {
+            /*if (fromCombo) {
                 CustomizeCombo c = new CustomizeCombo();
                 c.choseTea = true;
                 c.choseWater = false;
@@ -94,7 +115,7 @@ namespace PointOfSale
                 c.choseCoffee = false;
                 c.CheckDrink();
                 NavigationService.Navigate(c); 
-            }
+            }*/
 
         }
         /// <summary>
@@ -106,8 +127,26 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(new JurassicJava());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                
+
+                if (fromCombo)
+                {
+                    CustomizeCombo c = new CustomizeCombo();
+                    c.CheckDrink();
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        JurassicJava t = new JurassicJava();
+                        t.Size = combo.Size;
+                        combo.Drink = t;
+                    }
+
+                }
+                else
+                {
+                    order.Items.Add(new JurassicJava());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
             addLemonButton.Visibility = Visibility.Collapsed;
@@ -116,7 +155,7 @@ namespace PointOfSale
             sweetButton.Visibility = Visibility.Collapsed;
             flavorButton.Visibility = Visibility.Collapsed;
 
-            if (fromCombo)
+            /*if (fromCombo)
             {
                 CustomizeCombo c = new CustomizeCombo();
                 c.choseTea = false;
@@ -125,7 +164,7 @@ namespace PointOfSale
                 c.choseCoffee = true;
                 c.CheckDrink();
                 NavigationService.Navigate(c);
-            }
+            }*/
         }
         /// <summary>
         /// This method is the click event for the water button and adjusts buttons and bool values accordingly.
@@ -138,6 +177,25 @@ namespace PointOfSale
             {
                 order.Items.Add(new Water());
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+
+                if (fromCombo)
+                {
+                    CustomizeCombo c = new CustomizeCombo();
+                    c.CheckDrink();
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        Water t = new Water();
+                        t.Size = combo.Size;
+                        combo.Drink = t;
+                    }
+
+                }
+                else
+                {
+                    order.Items.Add(new Water());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
             addLemonButton.Visibility = Visibility.Visible;
@@ -146,7 +204,7 @@ namespace PointOfSale
             sweetButton.Visibility = Visibility.Collapsed;
             flavorButton.Visibility = Visibility.Collapsed;
 
-            if (fromCombo)
+            /*if (fromCombo)
             {
                 CustomizeCombo c = new CustomizeCombo();
                 c.choseTea = false;
@@ -155,7 +213,7 @@ namespace PointOfSale
                 c.choseCoffee = false;
                 c.CheckDrink();
                 NavigationService.Navigate(c);
-            }
+            }*/
         }
 
         /// <summary>
@@ -183,6 +241,17 @@ namespace PointOfSale
                         drink.HoldIce();
                     }
                 }
+                else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (!combo.Drink.Ice)
+                    {
+                        combo.Drink.AddIce();
+                    }
+                    else
+                    {
+                        combo.Drink.HoldIce();
+                    }
+                }
             }
         }
 
@@ -200,6 +269,20 @@ namespace PointOfSale
                     {
                         java.MakeCaf();
                     }
+                }else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (combo.Drink is JurassicJava java1)
+                    {
+                        if (!java1.Decaf)
+                        {
+                            java1.MakeDecaf();
+                        }
+                        else
+                        {
+                            java1.MakeCaf();
+                        }
+                    }
+                    
                 }
             }
         }
@@ -223,6 +306,21 @@ namespace PointOfSale
                         drink.Size = Size.Large;
                     }
 
+                }else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (sender == SmallButton)
+                    {
+                        combo.Drink.Size = Size.Small;
+                    }
+                    else if (sender == MediumButton)
+                    {
+                        combo.Drink.Size = Size.Medium;
+                    }
+                    else
+                    {
+                        combo.Drink.Size = Size.Large;
+                    }
+
                 }
             }
         }
@@ -241,7 +339,22 @@ namespace PointOfSale
                     {
                         tea.Sweet = false;
                     }
+                }else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (combo.Drink is Tyrannotea tea1)
+                    {
+                        if (!tea1.Sweet)
+                        {
+                            tea1.Sweet = true;
+                        }
+                        else
+                        {
+                            tea1.Sweet = false;
+                        }
+                    }
+                    
                 }
+                
             }
         }
 
@@ -270,6 +383,30 @@ namespace PointOfSale
                     {
                         tea.NoLemon();
                     }
+                }else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (combo.Drink is Water water1)
+                    {
+                        if (!water1.Lemon)
+                        {
+                            water1.AddLemon();
+                        }
+                        else
+                        {
+                            water1.NoLemon();
+                        }
+                    }
+                    else if (combo.Drink is Tyrannotea tea1)
+                    {
+                        if (!tea1.Lemon)
+                        {
+                            tea1.AddLemon();
+                        }
+                        else
+                        {
+                            tea1.NoLemon();
+                        }
+                    }
                 }
             }
         }
@@ -287,6 +424,19 @@ namespace PointOfSale
                     else
                     {
                         java.NoRoomForCream();
+                    }
+                }else if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    if (combo.Drink is JurassicJava java1)
+                    {
+                        if (!java1.RoomForCream)
+                        {
+                            java1.LeaveRoomForCream();
+                        }
+                        else
+                        {
+                            java1.NoRoomForCream();
+                        }
                     }
                 }
             }

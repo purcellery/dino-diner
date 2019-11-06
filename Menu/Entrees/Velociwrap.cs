@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 namespace DinoDiner.Menu
@@ -9,6 +8,25 @@ namespace DinoDiner.Menu
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
+        public override int Mods { get; } = 3;
+
+        public override void SwitchBoolByID(int id)
+        {
+            switch (id)
+            {
+                case 1:
+                    dressing = !dressing;
+                    break;
+                case 2:
+                    cheese = !cheese;
+                    break;
+                case 3:
+                    lettuce = !lettuce;
+                    break;
+
+            }
+            NotifyPropertyChanged("Special");
+        }
 
         /// <summary>
         /// Returns a list with all of the ingredients in the entree

@@ -4,6 +4,12 @@ namespace DinoDiner.Menu
 {
     public class PterodactylWings : Entree
     {
+        public override int Mods { get; } = 0;
+
+        public override void SwitchBoolByID(int id)
+        {
+            throw new System.NotImplementedException();
+        }
 
         /// <summary>
         /// Returns a list with all of the ingredients in the entree

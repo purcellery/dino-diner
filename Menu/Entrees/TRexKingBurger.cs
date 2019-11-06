@@ -13,6 +13,39 @@ namespace DinoDiner.Menu
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
+        public override int Mods { get; } = 8;
+
+        public override void SwitchBoolByID(int id)
+        {
+            switch (id)
+            {
+                case 1:
+                    bun = !bun;
+                    break;
+                case 2:
+                    onion = !onion;
+                    break;
+                case 3:
+                    pickle = !pickle;
+                    break;
+                case 4:
+                    ketchup = !ketchup;
+                    break;
+                case 5:
+                    mustard = !mustard;
+                    break;
+                case 6:
+                    mayo = !mayo;
+                    break;
+                case 7:
+                    tomato = !tomato;
+                    break;
+                case 8:
+                    lettuce = !lettuce;
+                    break;
+            }
+            NotifyPropertyChanged("Special");
+        }
 
         /// <summary>
         /// Returns a list with all of the ingredients in the entree

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 /**
  * CustomizeCombo.xaml.cs
@@ -38,22 +39,86 @@ namespace PointOfSale
         public CustomizeCombo()
         {
             InitializeComponent();
-            DrinkButton.Content = "Select a Drink";
-            SideButton.Content = "Select a Side";
-            
-
+            DrinkButton.Content = "Edit Drink";
+            SideButton.Content = "Edit Side";
         }
+
+        public void SmallClick(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    com.Size = DinoDiner.Menu.Size.Small;
+                    com.Side.Size = DinoDiner.Menu.Size.Small;
+                    com.Drink.Size = DinoDiner.Menu.Size.Small;
+                }
+            }
+        }
+
+        public void MediumClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    com.Size = DinoDiner.Menu.Size.Medium;
+                    com.Side.Size = DinoDiner.Menu.Size.Medium;
+                    com.Drink.Size = DinoDiner.Menu.Size.Medium;
+                }
+            }
+        }
+
+        public void LargeClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    com.Size = DinoDiner.Menu.Size.Large;
+                    com.Side.Size = DinoDiner.Menu.Size.Large;
+                    com.Drink.Size = DinoDiner.Menu.Size.Large;
+                }
+            }
+        }
+
+        public void EntreeClick(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    CustomizeEntree e = new CustomizeEntree();
+                    e.LoadButtonsAndContent(com.Entree);
+                    NavigationService.Navigate(e);
+                }
+            }
+        }
+
         public void SideClick(object sender, RoutedEventArgs args)
         {
-            SideSelection s = new SideSelection();
-            s.fromCombo = true;
-            NavigationService.Navigate(s);
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    SideSelection s = new SideSelection();
+                    s.fromCombo = true;
+                    NavigationService.Navigate(s);
+                }
+            }
+            
         }
         public void DrinkClick(object sender, RoutedEventArgs args)
         {
-            DrinkSelection d = new DrinkSelection();
-            d.fromCombo = true;
-            NavigationService.Navigate(d);
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo com)
+                {
+                    DrinkSelection s = new DrinkSelection();
+                    s.fromCombo = true;
+                    NavigationService.Navigate(s);
+                }
+            }
         }
         public void CheckDrink()
         {

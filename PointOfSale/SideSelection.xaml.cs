@@ -52,10 +52,21 @@ namespace PointOfSale
                     c.choseSticks = false;
                     c.choseMac = false;
                     c.CheckSide();
-                    NavigationService.Navigate(c);
+                    //NavigationService.Navigate(c);
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        Fryceritops t = new Fryceritops();
+                        t.Size = combo.Size;
+                        combo.Side = t;
+                    }
+                    NavigationService.GoBack();
                 }
-                order.Items.Add(new Fryceritops());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                else
+                {
+                    order.Items.Add(new Fryceritops());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
 
@@ -71,10 +82,22 @@ namespace PointOfSale
                     c.choseSticks = false;
                     c.choseMac = false;
                     c.CheckSide();
-                    NavigationService.Navigate(c);
+                    //NavigationService.Navigate(c);
+
+                    if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        Triceritots t = new Triceritots();
+                        t.Size = combo.Size;
+                        combo.Side = t;
+                    }
+                    NavigationService.GoBack();
                 }
-                order.Items.Add(new Fryceritops());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                else
+                {
+                    order.Items.Add(new Triceritots());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
+                
             }
         }
 
@@ -90,10 +113,21 @@ namespace PointOfSale
                     c.choseSticks = true;
                     c.choseMac = false;
                     c.CheckSide();
-                    NavigationService.Navigate(c);
+                    //NavigationService.Navigate(c);
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        MezzorellaSticks t = new MezzorellaSticks();
+                        t.Size = combo.Size;
+                        combo.Side = t;
+                    }
+                    NavigationService.GoBack();
                 }
-                order.Items.Add(new MezzorellaSticks());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                else
+                {
+                    order.Items.Add(new MezzorellaSticks());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
 
@@ -109,10 +143,21 @@ namespace PointOfSale
                     c.choseSticks = false;
                     c.choseMac = true;
                     c.CheckSide();
-                    NavigationService.Navigate(c);
+                    //NavigationService.Navigate(c);
+
+                    if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                    {
+                        MeteorMacAndCheese t = new MeteorMacAndCheese();
+                        t.Size = combo.Size;
+                        combo.Side = t;
+                    }
+                    NavigationService.GoBack();
                 }
-                order.Items.Add(new MeteorMacAndCheese());
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                else
+                {
+                    order.Items.Add(new MeteorMacAndCheese());
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
 

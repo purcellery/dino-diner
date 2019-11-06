@@ -32,6 +32,10 @@ namespace DinoDiner.Menu
             set 
             {
                 this.e = value;
+                this.e.PropertyChanged += Update;
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
                 NotifyPropertyChanged("Entree");
             }
         }
@@ -47,6 +51,10 @@ namespace DinoDiner.Menu
             set
             {
                 this.cs = value;
+                this.cs.PropertyChanged += Update;
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
                 NotifyPropertyChanged("Side");
             }
         }
@@ -62,6 +70,10 @@ namespace DinoDiner.Menu
             set
             {
                 this.d = value;
+                this.d.PropertyChanged += Update;
+                NotifyPropertyChanged("Special");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
                 NotifyPropertyChanged("Drink");
             }
         }
@@ -100,6 +112,9 @@ namespace DinoDiner.Menu
                 Drink.Size = value;
                 Side.Size = value;
                 NotifyPropertyChanged("Size");
+                NotifyPropertyChanged("Description");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Special");
             }
         }
 
@@ -142,14 +157,25 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             e = entree;
+            e.PropertyChanged += Update;
             this.d = new Sodasaurus();
+            d.PropertyChanged += Update;
             this.cs = new Fryceritops();
+            cs.PropertyChanged += Update;
         }
 
         public override string ToString()
         {
             return Entree.ToString() + " Combo";
         }
+
+        private void Update(object sender, PropertyChangedEventArgs e)
+        {
+            NotifyPropertyChanged("Special");
+            NotifyPropertyChanged("Price");
+            NotifyPropertyChanged("Description");
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyPropertyChanged(string name)

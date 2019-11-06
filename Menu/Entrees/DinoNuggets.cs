@@ -6,6 +6,24 @@ namespace DinoDiner.Menu
     {
         private int nuggetCount = 6;
 
+        public override int Mods { get; } = 2;
+
+        public override void SwitchBoolByID(int id)
+        {
+            switch (id)
+            {
+                case 1:
+                    AddNugget();
+                    break;
+                case 2:
+                    RemoveNugget();
+                    break;
+            }
+            NotifyPropertyChanged("Price");
+            NotifyPropertyChanged("Calories");
+            NotifyPropertyChanged("Special");
+        }
+
         /// <summary>
         /// Returns a list with all of the ingredients in the entree
         /// </summary>
@@ -39,8 +57,25 @@ namespace DinoDiner.Menu
             nuggetCount++;
             this.Price += .25;
             this.Calories += 59;
+            NotifyPropertyChanged("Price");
+            NotifyPropertyChanged("Calories");
             NotifyPropertyChanged("Special");
         }
+        public void RemoveNugget()
+        {
+            if(nuggetCount > 6)
+            {
+                nuggetCount--;
+                this.Price -= 0.25;
+                this.Calories -= 59;
+                Ingredients.Remove("Chicken Nugget");
+
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
+                NotifyPropertyChanged("Special");
+            }
+        }
+
         public override string ToString()
         {
             return "Dino-Nuggets";
@@ -58,7 +93,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> s = new List<string>();
-                if(nuggetCount < 6)
+                if(nuggetCount > 6)
                 {
                     s.Add((nuggetCount - 6) + " Extra Nuggets");
                 }

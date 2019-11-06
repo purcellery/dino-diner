@@ -7,16 +7,18 @@
         mc:Ignorable="d"
         Title="CustomizeCombo" Height="450" Width="800">
     <Grid>
-        <Button  Name="SideButton" HorizontalAlignment="Left" Margin="110,97,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="SideClick"/>
-        <Button  Name="DrinkButton"  HorizontalAlignment="Left" Margin="444,97,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="DrinkClick"/>
+        <Button  Name="SideButton" HorizontalAlignment="Left" Margin="308,97,0,0" VerticalAlignment="Top" Width="193" Height="120" Click="SideClick"/>
+        <Button  Name="DrinkButton"  HorizontalAlignment="Left" Margin="562,97,0,0" VerticalAlignment="Top" Width="178" Height="120" Click="DrinkClick"/>
         <Label Content="Add to Order" HorizontalAlignment="Left" Margin="355,10,0,0" VerticalAlignment="Top" Height="45" Width="84"/>
         <Label Content="Cretaceous Combo" HorizontalAlignment="Left" Margin="339,37,0,0" VerticalAlignment="Top" Height="45" Width="114"/>
-        <Label Content="Side" HorizontalAlignment="Left" Margin="212,64,0,0" VerticalAlignment="Top" Height="33" Width="37"/>
-        <Label Content="Drink" HorizontalAlignment="Left" Margin="545,64,0,0" VerticalAlignment="Top" Height="33" Width="37"/>
-        <Button Content="Small" HorizontalAlignment="Left" Margin="20,258,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Medium" HorizontalAlignment="Left" Margin="277,258,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
-        <Button Content="Large" HorizontalAlignment="Left" Margin="533,258,0,0" VerticalAlignment="Top" Width="240" Height="120"/>
+        <Label Content="Side" HorizontalAlignment="Left" Margin="381,64,0,0" VerticalAlignment="Top" Height="33" Width="37" RenderTransformOrigin="-0.905,0.688"/>
+        <Label Content="Drink" HorizontalAlignment="Left" Margin="639,66,0,0" VerticalAlignment="Top" Height="33" Width="37" RenderTransformOrigin="1.678,0.47"/>
+        <Button Content="Small" HorizontalAlignment="Left" Margin="20,258,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="SmallClick"/>
+        <Button Content="Medium" HorizontalAlignment="Left" Margin="277,258,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="MediumClick"/>
+        <Button Content="Large" HorizontalAlignment="Left" Margin="533,258,0,0" VerticalAlignment="Top" Width="240" Height="120" Click="LargeClick"/>
         <Label Content="Size" HorizontalAlignment="Left" Margin="381,225,0,0" VerticalAlignment="Top" Height="33" Width="37"/>
+        <Button Content="Edit Entree" HorizontalAlignment="Left" Margin="49,97,0,0" VerticalAlignment="Top" Width="193" RenderTransformOrigin="-0.257,-2.005" Height="120" Click="EntreeClick"/>
+        <Label Content="Entree" HorizontalAlignment="Left" Margin="134,66,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
