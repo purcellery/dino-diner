@@ -1,0 +1,111 @@
+﻿@page
+@model Website.Pages.MenuModel
+@using DinoDiner.Menu
+
+<h1>Menu</h1>
+<h2>Combos</h2>
+@foreach (CretaceousCombo c in Model.menu.AvailableCombos)
+{
+    <div class="menu-item">
+        <p>
+            <b>
+                @c.Description
+            </b>
+        </p>
+        <p>
+            $@c.Price.ToString("0.00")
+        </p>
+        <p>
+            @c.Calories Calories
+        </p>
+        <p>
+            <u>Ingredients</u>
+            @foreach (string s in c.Ingredients)
+            {
+            <p>
+                @s
+            </p>
+        }
+            </p>
+        </div>
+    }
+
+<h2>Entrees</h2>
+@foreach (Entree c in Model.menu.AvailableEntrees)
+{
+    <div class="menu-item">
+        <p>
+            <b>
+                @c.Description
+            </b>
+        </p>
+        <p>
+            $@c.Price.ToString("0.00")
+        </p>
+        <p>
+            @c.Calories Calories
+        </p>
+        <p>
+            <u>Ingredients</u>
+            @foreach (string s in c.Ingredients)
+            {
+            <p>
+                @s
+            </p>
+        }
+            </p>
+        </div>
+    }
+<h2>Sides</h2>
+@foreach (Side c in Model.menu.AvailableSides)
+{
+    <div class="menu-item">
+        <p>
+            <b>
+                @c.Description
+            </b>
+        </p>
+        <p>
+           $@c.Price
+        </p>
+        <p>
+            @c.Calories.ToString("0.00")
+        </p>
+        <p>
+            <u>Ingredients</u>
+            @foreach (string s in c.Ingredients)
+            {
+            <p>
+                @s
+            </p>
+        }
+            </p>
+        </div>
+    }
+<h2>Drinks</h2>
+@foreach (Drink c in Model.menu.AvailableDrinks)
+{
+    <div class="menu-item">
+        <p>
+            <b>
+                @c.Description
+            </b>
+        </p>
+        <p>
+            $@c.Price
+        </p>
+        <p>
+            @c.Calories.ToString("0.00")
+        </p>
+        <p>
+            <u>Ingredients</u>
+            @foreach (string s in c.Ingredients)
+            {
+            <p>
+                @s
+            </p>
+        }
+            </p>
+        </div>
+    }
+

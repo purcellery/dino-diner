@@ -7,57 +7,102 @@ namespace DinoDiner.Menu
     public class Menu
     {
 
-        public List<string> AvailableMenuItems { get; }
-        public List<string> AvailableDrinks { get; }
-        public List<string> AvailableSides { get; }
-        public List<string> AvailableEntrees { get; }
-        public Menu()
-        {
-            this.AvailableMenuItems.Add("Jurassic Java");
-            this.AvailableMenuItems.Add("Sodasaurus");
-            this.AvailableMenuItems.Add("Water");
-            this.AvailableMenuItems.Add("Tyrannotea");
+        public List<IMenuItem> AvailableMenuItems {
+            get
+            {
+                return new List<IMenuItem>() {
+                    new CretaceousCombo(new Brontowurst()),
+                    new CretaceousCombo(new DinoNuggets()),
+                    new CretaceousCombo(new PrehistoricPBJ()),
+                    new CretaceousCombo(new PterodactylWings()),
+                    new CretaceousCombo(new SteakosaurusBurger()),
+                    new CretaceousCombo(new TRexKingBurger()),
+                    new CretaceousCombo(new VelociWrap()),
 
-            this.AvailableMenuItems.Add("Triceritots");
-            this.AvailableMenuItems.Add("Mezzorella Sticks");
-            this.AvailableMenuItems.Add("Meteor Mac and Cheese");
-            this.AvailableMenuItems.Add("Fryceritops");
-            this.AvailableMenuItems.Add("Triceritots");
+                    new JurassicJava(),
+                    new Sodasaurus(),
+                    new Tyrannotea(),
+                    new Water(),
 
-            this.AvailableMenuItems.Add("Velociwrap");
-            this.AvailableMenuItems.Add("T-Rex King Burger");
-            this.AvailableMenuItems.Add("Pterodactyl Wings");
-            this.AvailableMenuItems.Add("Prehistoric PB&J");
-            this.AvailableMenuItems.Add("Steakosaurus Burger");
-            this.AvailableMenuItems.Add("Brontowurst");
-            this.AvailableMenuItems.Add("Dino-Nuggets");
+                    new Brontowurst(),
+                    new DinoNuggets(),
+                    new PrehistoricPBJ(),
+                    new PterodactylWings(),
+                    new SteakosaurusBurger(),
+                    new TRexKingBurger(),
+                    new VelociWrap(),
 
-            this.AvailableDrinks.Add("Jurassic Java");
-            this.AvailableDrinks.Add("Sodasaurus");
-            this.AvailableDrinks.Add("Water");
-            this.AvailableDrinks.Add("Tyrannotea");
-
-            this.AvailableSides.Add("Triceritots");
-            this.AvailableSides.Add("Mezzorella Sticks");
-            this.AvailableSides.Add("Meteor Mac and Cheese");
-            this.AvailableSides.Add("Fryceritops");
-            this.AvailableSides.Add("Triceritots");
-
-            this.AvailableEntrees.Add("Velociwrap");
-            this.AvailableEntrees.Add("T-Rex King Burger");
-            this.AvailableEntrees.Add("Pterodactyl Wings");
-            this.AvailableEntrees.Add("Prehistoric PB&J");
-            this.AvailableEntrees.Add("Steakosaurus Burger");
-            this.AvailableEntrees.Add("Brontowurst");
-            this.AvailableEntrees.Add("Dino-Nuggets");
+                    new Fryceritops(),
+                    new MeteorMacAndCheese(),
+                    new MezzorellaSticks(),
+                    new Triceritots()
+                };
+            }
         }
-    
+
+        public List<Drink> AvailableDrinks
+        {
+            get
+            {
+                return new List<Drink>
+                {
+                    new JurassicJava(),
+                    new Sodasaurus(),
+                    new Tyrannotea(),
+                    new Water()
+                };
+            }
+        }
+
+        public List<Side> AvailableSides { 
+            get
+            {
+                return new List<Side>
+                {
+                    new Fryceritops(),
+                    new MeteorMacAndCheese(),
+                    new MezzorellaSticks(),
+                    new Triceritots()
+                };
+            }
+        }
+
+        public List<Entree> AvailableEntrees { get
+            {
+                return new List<Entree>
+                {
+                    new Brontowurst(),
+                    new DinoNuggets(),
+                    new PrehistoricPBJ(),
+                    new PterodactylWings(),
+                    new SteakosaurusBurger(),
+                    new TRexKingBurger(),
+                    new VelociWrap()
+                };
+            }
+        }
+        public List<CretaceousCombo> AvailableCombos { 
+            get
+            {
+                return new List<CretaceousCombo>
+                {
+                    new CretaceousCombo(new Brontowurst()),
+                    new CretaceousCombo(new DinoNuggets()),
+                    new CretaceousCombo(new PrehistoricPBJ()),
+                    new CretaceousCombo(new PterodactylWings()),
+                    new CretaceousCombo(new SteakosaurusBurger()),
+                    new CretaceousCombo(new TRexKingBurger()),
+                    new CretaceousCombo(new VelociWrap())
+                };
+            }
+        }
+
         public string toString()
         {
             string st = "";
-            foreach(string s in AvailableMenuItems)
+            foreach(IMenuItem s in AvailableMenuItems)
             {
-                st += s + "\n";
+                st += s.ToString() + "\n";
             }
             return st;
         }
