@@ -3,8 +3,50 @@
 @using DinoDiner.Menu
 
 <h1>Menu</h1>
+
+<form method="post">
+    <input type="text" name="search" id="search"/>
+
+    <input type="submit" value="Search" />
+    <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
+    
+    <label>
+        Combo
+        <input type="checkbox" name="menuCategory" class="menu-category" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+    </label>
+    <label>
+        Entree
+        <input type="checkbox" name="menuCategory" class="menu-category" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
+    </label>
+    <label>
+        Side
+        <input type="checkbox" name="menuCategory" class="menu-category" value="Side" checked="@Model.menuCategory.Contains("Side")" />
+    </label>
+    <label>
+        Drink
+        <input type="checkbox" name="menuCategory" class="menu-category" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
+    </label>
+
+    <label>
+        Filter By Minimum Price
+        <input type="number" id="minimum-price" name="minimumPrice" step=".1" min="0" value="@Model.minimumPrice"/>
+    </label>
+    <label>
+        Filter By Maximum Price
+        <input type="number" id="maximum-price" name="maximumPrice" step=".1" min="0" value="@Model.maximumPrice"/>
+    </label>
+    <h3>Filter Out Food With Selected Ingredient(s)</h3>
+    @foreach(string ing in Model.menu.PossibleIngredients)
+    {
+<label>
+    @ing
+    <input class="exclude-ingredient" name="exclusiveIngredients" value="@ing" type="checkbox" checked="@Model.exclusiveIngredients.Contains(ing)" />
+</label>
+    }
+</form>
+
 <h2>Combos</h2>
-@foreach (CretaceousCombo c in Model.menu.AvailableCombos)
+@foreach (CretaceousCombo c in Model.Items[0])
 {
     <div class="menu-item">
         <p>
@@ -31,7 +73,7 @@
     }
 
 <h2>Entrees</h2>
-@foreach (Entree c in Model.menu.AvailableEntrees)
+@foreach (Entree c in Model.Items[2])
 {
     <div class="menu-item">
         <p>
@@ -57,7 +99,7 @@
         </div>
     }
 <h2>Sides</h2>
-@foreach (Side c in Model.menu.AvailableSides)
+@foreach (Side c in Model.Items[3])
 {
     <div class="menu-item">
         <p>
@@ -83,7 +125,7 @@
         </div>
     }
 <h2>Drinks</h2>
-@foreach (Drink c in Model.menu.AvailableDrinks)
+@foreach (Drink c in Model.Items[1])
 {
     <div class="menu-item">
         <p>
